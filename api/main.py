@@ -1,11 +1,12 @@
 from flask import (
     Flask, jsonify,request
 )
+from flask_cors import CORS
 import json
 from grafo.lista_adjacencia import *
 
 app = Flask("application")
-
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 # Define error when status code is 404 
 @app.errorhandler(404)
 def page_not_found(error):

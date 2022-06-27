@@ -1,25 +1,19 @@
-import { useRouter } from "next/router";
-import { useState } from "react";
 import Dropdown from "../components/Dropdown/Dropdown";
 import Header from "../components/Header/Header";
-import axios from "axios";
-
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Home() {
   const [num, setNum] = useState(0);
   const router = useRouter();
 
   const handleClick = () => {
-    console.log(num)
-
-    
-    router.push(`/result/${num}`)
+    router.push(`/result/${num}`);
   }
 
   return (
     <div>
       <Header />
-      {/* <button onClick={() => setNum(num++)}>{num}</button> */}
       <div style={{
         display: 'flex',
         flexDirection: 'column',

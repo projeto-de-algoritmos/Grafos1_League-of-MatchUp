@@ -9,6 +9,7 @@ nodes = []
 
 axios(urlNodes).then(response => {
     tabelaChamps = []
+    tabelaChampsImages = []
     const lolPageChamps = response.data;
     const $ = cheerio.load(lolPageChamps);
     const listTable = $('.style__List-sc-13btjky-2');
@@ -16,15 +17,19 @@ axios(urlNodes).then(response => {
         const span = $(this).find('.style__Wrapper-n3ovyt-0')
         span.each(function(){
             const nameChampion = $(this).find('.gMLOLF').text()
+            const images =  $(this).find('.style__NoScriptImg-g183su-0').attr("src")
+            tabelaChampsImages.push(images)
             tabelaChamps.push(nameChampion)
+
         })
     })
 
-    // console.log(tabelaChamps)
+    console.log(tabelaChampsImages)
     for (var i = 0; i < tabelaChamps.length ; i++) {
         nodes.push({
             "id": i+1,
             "champ": tabelaChamps[i],
+            "image": tabelaChampsImages[i]
         })
     }
     // Gera o arquivo de Nos
@@ -67,7 +72,7 @@ axios(urlEdges).then(response => {
             "nameBetterThan": tabelaMatchUp[i+2],
             "champ": nodes.findIndex(std=> std.champ === tabelaMatchUp[i]),
             "betterThan": nodes.findIndex(std=> std.champ === tabelaMatchUp[i+2])
-        }),
+        })
         edges.push({
             "nameChamp": tabelaMatchUp[i+3],
             "nameBetterThan": tabelaMatchUp[i],

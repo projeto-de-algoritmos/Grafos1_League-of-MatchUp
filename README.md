@@ -13,18 +13,28 @@
 Este projeto tem como objetivo ser útil aos jogadores de League of Legends, dando informações sobre as match ups entre os campeões do jogo. 
 
 ## Screenshots
-<!-- Adicione 3 ou mais screenshots do projeto em funcionamento. -->
+Tela de escolha:
+![image](https://user-images.githubusercontent.com/44625056/176065055-9f6fe4f4-f466-417e-8bb9-ac1a23255973.png)
+
+Tela de resultado:
+![image](https://user-images.githubusercontent.com/44625056/176064994-106e734f-dc71-4f92-ab09-86f84dd91528.png)
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Foram utilizadas 2 linguagens nesse projeto, javascript e Python. Para facilitar a execução do projeto por parte dos professores e alunos adicionamos um docker-compose para a instalação das linguagens e execução<br>
+**Framework**:<br>
+Utilizamos o flask como backend para receber as requisições feitas e para aplicar os algorítmos relacionado a lista de Adjacência.
+Utilizamos o Node.js para fazer o scrapping dos dados dentro do site que possui as métricas relacionadas aos matchUps.
+Utilizamos o Next.js para fazer o frontend responsável por mostrar a visualização dos dados resultantes do backend.
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Tudo que é necessário para executar esse projeto é ter em sua máquina instalado o [docker](https://docs.docker.com/engine/install/ubuntu/) e o [docker-compose](https://docs.docker.com/compose/install/)
 
-<!-- ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo. -->
+Após a intalação de ambos é necessário executar o seguinte comando na raiz desse projeto:
+```
+docker-compose up
+
+```
+- Agora basta acessar o link abaixo que você será rederionado para o nosso projeto no seu browser [link](localhost:3000)
 
 
 

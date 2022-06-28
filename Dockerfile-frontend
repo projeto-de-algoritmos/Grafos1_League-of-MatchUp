@@ -1,0 +1,16 @@
+FROM node:12-alpine as builder-file
+
+WORKDIR /bld
+
+COPY ./scrapping .
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+
+RUN npm install
+# RUN npm start
+ENTRYPOINT [ "npm", "start" ]
+FROM node:12-alpine
+WORKDIR /front
+COPY ./frontend .
+RUN npm install
+COPY --from=builder-file bld/Edges.json /front/src/
+ENTRYPOINT [ "npm", "run", "dev" ]

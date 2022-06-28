@@ -34,7 +34,7 @@ Após a intalação de ambos é necessário executar o seguinte comando na raiz 
 docker-compose up
 
 ```
-- Agora basta acessar o link abaixo que você será rederionado para o nosso projeto no seu browser no localhost:3000
+- Agora basta acessar o link abaixo que você será redirecionado para o nosso projeto no seu browser no localhost:3000
 
 
 
